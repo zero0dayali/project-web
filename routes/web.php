@@ -21,19 +21,20 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::group(['middleware' => ['auth','admin']], function () {
+Route::group(['middleware' => ['auth', 'admin']], function () {
 
     Route::get('/dashboard', function () {
         return view('admin.dashboard');
     });
 
-    Route::get('/role-register', 'Admin\DashboardController@registered' );
+    Route::get('/role-register', 'Admin\DashboardController@registered');
 
     Route::get('/role-edit/{id}', 'Admin\DashboardController@registerEdit');
 
     Route::put('/role-register-update/{id}', 'Admin\DashboardController@registerUpdate');
+
+    Route::get('/teachers', 'Admin\TeachersController@index');
+
+    Route::post('/save-teachers', 'Admin\TeachersController@store');
+    Route::get('/teachers/{id}', 'Admin\TeachersController@edit');
 });
-
-
-
-

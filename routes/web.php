@@ -28,13 +28,11 @@ Route::group(['middleware' => ['auth', 'admin']], function () {
     });
 
     Route::get('/role-register', 'Admin\DashboardController@registered');
-
     Route::get('/role-edit/{id}', 'Admin\DashboardController@registerEdit');
-
     Route::put('/role-register-update/{id}', 'Admin\DashboardController@registerUpdate');
 
     Route::get('/teachers', 'Admin\TeachersController@index');
-
     Route::post('/save-teachers', 'Admin\TeachersController@store');
     Route::get('/teachers/{id}', 'Admin\TeachersController@edit');
+    Route::put('/teachers-update/{id}', 'Admin\TeachersController@update');
 });

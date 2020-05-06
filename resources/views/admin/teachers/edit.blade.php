@@ -10,9 +10,9 @@
             <h4 class="card-title"> Edit Data</h4>
           </div>
           <div class="card-body">
-          <form action="" method="post">
+          <form action="{{url('teachers-update/'.$teachers->id)}}" method="post">
               {{ csrf_field() }}
-              {{-- @method('put') --}}
+              @method('put')
               <div class="form-group">
                 <label for="nik">Usernik</label>
                 <input type="text" name="nik" class="form-control" id="nik" value="{{$teachers->nik}}">
@@ -20,7 +20,7 @@
               </div>
               <div class="form-group">
                 <label for="name">Username</label>
-                <input type="text" name="username" class="form-control" id="name" value="{{$teachers->name}}">
+                <input type="text" name="name" class="form-control" id="name" value="{{$teachers->name}}">
                 <small id="name" class="form-text text-muted">Please type your new name.</small>
               </div>
               <div class="form-group">

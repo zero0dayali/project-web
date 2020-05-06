@@ -31,6 +31,19 @@ class TeachersController extends Controller
     public function edit($id)
     {
         $teachers = Teachers::findOrFail($id);
-        return view('admin.teachers.edit')->with('teachers', $teachers)->with('status', 'Sudah di edit');
+        return view('admin.teachers.edit')->with('teachers', $teachers);
+    }
+
+    public function update(Request $request, $id)
+    {
+        $teachers = Teachers::findOrFail($id);
+        $teachers->nik = $request->input('nik');
+        $teachers->name = $request->input('name');
+        $teachers->email = $request->input('email');
+        $teachers->phone = $request->input('phone');
+        $teachers->address = $request->input('address');
+        $teachers->update();
+
+        return redirect('teachers')->with('status', 'Data berhasil di update');
     }
 }

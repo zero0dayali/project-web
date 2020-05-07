@@ -20,6 +20,7 @@
    <link href="{{ asset('css/demo.css') }}" rel="stylesheet">
 </head>
 
+
 <body class="">
   <div class="wrapper ">
     <div class="sidebar" data-color="greeqn">

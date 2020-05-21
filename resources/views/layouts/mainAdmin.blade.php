@@ -20,9 +20,10 @@
    <link href="{{ asset('css/demo.css') }}" rel="stylesheet">
 </head>
 
+
 <body class="">
   <div class="wrapper ">
-    <div class="sidebar" data-color="green">
+    <div class="sidebar" data-color="greeqn">
         @include('layouts.navbarSamping')
         <div class="main-panel" id="main-panel">
             @include('layouts.navbarMain')
